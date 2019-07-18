@@ -1,0 +1,34 @@
+<div class="row mt-5 mb-5 p-5" style="width: 100%">
+
+    <div class="col-sm-6 ">
+
+        <div class="white-box text-right p-3" style="width: 90%;margin:auto">
+            <div class="text-center ">
+                <h4>הכנס יעד חדש</h4>
+            </div>
+            <form [formGroup]="newTravelForm" (ngSubmit)="onSubmit()">
+                <mat-form-field class="col-sm-12">
+                    <input type="text" placeholder="Pick one" #a aria-label="Number" matInput formControlName="countryName"
+                        [matAutocomplete]="auto" required>
+                    <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let country of service.countries$ | search : newTravelForm.value.countryName" [value]="country.name">
+                            {{country.name}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+                <mat-form-field class="col-sm-12">
+                    <textarea rows="5" matInput placeholder="תיאור הטיול בקצרה" type="text"
+                        formControlName="description" required></textarea>
+                    <mat-error>
+                         תיאור הטיול חייב להיות בין 25-50 תווים
+                    </mat-error>
+                </mat-form-field>
+                <button [disabled]="!newTravelForm.valid" color="primary" mat-button type="submit">הוסף יעד</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-sm-6 text-center text-white">
+        <h1>My Travel</h1>
+    </div>
+</div>

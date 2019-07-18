@@ -1,0 +1,18 @@
+.top{
+    background-color: rgba(255, 255, 255, 0.205);
+    box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.342);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    transition: 0.4s ease-out;
+    }
+
+.scroll {
+    background-color: rgb(56, 56, 56);
+    color: white;
+    box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.342);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    transition: 0.4s ease-out;
+    }

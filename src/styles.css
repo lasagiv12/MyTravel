@@ -1,0 +1,17 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body, html{
+    background-image: url("assets/background6.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+.white-box{
+    background-color: rgb(255, 255, 255);
+    padding: 0px;
+    border-radius: 6px;
+    box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.342);
+    color:rgb(0, 0, 0);
+}  

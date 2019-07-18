@@ -1,0 +1,59 @@
+<div class="bg-white mt-5 p-5">
+    <div class="white-box container">
+        <div class="text-center p-3">
+            <h1>רשימת יעדים</h1>
+        </div>
+        <div>
+            <mat-expansion-panel class="p-2 mb-2 bg-light" *ngFor="let country of service.countriesSavedList">
+                <mat-expansion-panel-header>
+                    <mat-panel-title style="width: 50%">
+                        <img src="{{country?.country[0]?.flag}}" class="avatar"> <b
+                            class="m-2">{{country?.country[0]?.name}} - {{country?.country[0]?.alpha2Code}}</b>
+                    </mat-panel-title>
+                    <mat-panel-description >
+                        {{country?.date | date : 'dd/MM/yyyy'}}
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="text-center">
+                            <h3>אודות היעד</h3>
+                        </div>
+                        <table style="width: 100%" class="table-striped text-right">
+                            <tbody>
+                                <tr>
+                                    <td>אזור: </td>
+                                    <td>{{country?.country[0]?.region}}</td>
+                                </tr>
+                                <tr>
+                                    <td>עיר הבירה: </td>
+                                    <td>{{country?.country[0]?.capital}}</td>
+                                </tr>
+                                <tr>
+                                    <td>גודל אוכלוסיה: </td>
+                                    <td>{{country?.country[0]?.population | number}}</td>
+                                </tr>
+                                <tr>
+                                    <td>מטבע: </td>
+                                    <td>{{country?.country[0]?.currencies[0].code}}
+                                        {{country?.country[0]?.currencies[0].symbol}}</td>
+                                </tr>
+                                <tr>
+                                    <td>איזור חיוג: </td>
+                                    <td>{{country?.country[0]?.callingCodes}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <h3>פירוט הטיול <button mat-button style="float: left" (click)="edit = !edit"><mat-icon>edit</mat-icon></button></h3>
+                        <mat-form-field class="col-sm-12">
+                        <input [disabled]="edit" matInput [(ngModel)]="country.tripDescription">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+        </div>
+    </div>
+</div>
