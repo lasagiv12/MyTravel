@@ -35,6 +35,6 @@ export class AddNewTravelComponent implements OnInit {
           localStorage.setItem('countries',JSON.stringify(this.service.countriesSavedList));
       }
     })
-    this.newTravelForm.reset();
+    
   }
 }
